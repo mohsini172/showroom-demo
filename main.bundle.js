@@ -231,7 +231,7 @@ module.exports = "<mat-sidenav-container fxLayout=\"column\" class=\"dashboard-c
 /***/ "./src-user/app/components/dashboard/dashboard.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.flex-spacer {\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n"
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n"
 
 /***/ }),
 
@@ -405,14 +405,14 @@ var NewCarsComponent = /** @class */ (function () {
 /***/ "./src-user/app/components/registered-cars/registered-cars.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div *ngFor=\"let car of cars\">\n        {{car.name}}\n    </div>\n</div>"
+module.exports = "<div>\n    <div fxLayout=\"column\" fxLayoutGap=\"20px\" *ngFor=\"let car of cars\">\n        <div fxFlex=\"100\" class=\"mat-elevation-z1 card\">\n            <div fxLayout=\"row\">\n                <div class=\"thumbnail\" fxFlex=\"120px\">\n                </div>\n                <div fxFlex=\"100\" class=\"content\" fxLayout=\"column\">\n                    <div fxFlex=\"100\" fxLayout=\"row\">\n                        <div class=\"title\">{{car.name}}</div>\n                        <div class=\"flex-spacer\"></div>\n                        <mat-icon>favorite_border</mat-icon>\n                    </div>\n                    <div class=\"vertical-spacer\"></div>\n\n                    <div class=\"location\">{{car.location}}</div>\n\n                    <div class=\"props\" fxFlex=\"100\" fxLayout=\"row\">\n                        <span class=\"margin-right\">{{car.year}}</span> | \n                        <span class=\"margin-right margin-left\">{{car.mileage}}</span> | \n                        <span class=\"margin-right margin-left\">{{car.fuel}}</span>                        \n                    </div>\n                    <div class=\"vertical-spacer\"></div>\n\n                    <div fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n                        <span class=\"flex-spacer\"></span>\n                        <div class=\"price-units\">PKR</div>  \n                        <div class=\"price\">{{car.price}}</div>  \n                        <div class=\"price-units\">lacs</div>\n                    </div>\n                    <div style=\"height:5px;\"></div>                    \n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ "./src-user/app/components/registered-cars/registered-cars.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".card {\n  background-color: white;\n  margin: 3px 0px; }\n\n.thumbnail {\n  background: url('car.6f774eb641fffe18897e.jpg');\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: auto 100%; }\n\n.content {\n  padding: 10px 10px 10px 20px; }\n\n.content .title {\n    font-weight: 600;\n    font-size: 16px; }\n\n.content .location, .content .props {\n    font-size: 12px;\n    color: gray; }\n\n.content .price {\n    font-weight: 600;\n    font-size: 16px;\n    color: #4caf50; }\n\n.content .price-units {\n    margin: 0px 10px;\n    font-size: 12px;\n    color: #4caf50; }\n\n.margin-left {\n  margin-left: 10px; }\n\n.margin-right {\n  margin-right: 10px; }\n\n.vertical-spacer {\n  margin: 5px 0px; }\n"
 
 /***/ }),
 
@@ -622,49 +622,56 @@ var RegisteredCarsService = /** @class */ (function () {
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             },
             {
                 name: "Suzuki Alto ECO L",
                 mileage: 12000,
                 location: "Islamabad",
                 year: 2015,
-                fuel: "Petrol"
+                fuel: "Petrol",
+                price: 1.67
             }
         ];
     };
