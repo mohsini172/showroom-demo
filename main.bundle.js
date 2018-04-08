@@ -83,12 +83,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_registered_cars_registered_cars_component__ = __webpack_require__("./src-user/app/components/registered-cars/registered-cars.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_unregistered_cars_unregistered_cars_component__ = __webpack_require__("./src-user/app/components/unregistered-cars/unregistered-cars.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_registered_cars_service__ = __webpack_require__("./src-user/app/services/registered-cars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__ = __webpack_require__("./src-user/app/components/sell/sell.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -118,12 +120,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_11__components_dashboard_home_dashboard_home_component__["a" /* DashboardHomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__components_new_cars_new_cars_component__["a" /* NewCarsComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__components_registered_cars_registered_cars_component__["a" /* RegisteredCarsComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_unregistered_cars_unregistered_cars_component__["a" /* UnregisteredCarsComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__components_unregistered_cars_unregistered_cars_component__["a" /* UnregisteredCarsComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["b" /* SellComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["a" /* DialogColorChoser */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */],
                 __WEBPACK_IMPORTED_MODULE_6__routing_module__["a" /* RoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MatAutocompleteModule */],
@@ -133,34 +138,34 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatCheckboxModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MatChipsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["g" /* MatDatepickerModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["h" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDividerModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["j" /* MatExpansionModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["k" /* MatGridListModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["l" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["n" /* MatListModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["o" /* MatMenuModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatNativeDateModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatPaginatorModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["r" /* MatProgressBarModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["t" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["u" /* MatRippleModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["v" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["w" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["y" /* MatSliderModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["x" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["z" /* MatSnackBarModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSortModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["B" /* MatStepperModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["C" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatTabsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["E" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_material__["F" /* MatTooltipModule */]
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["k" /* MatDividerModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["l" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["m" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["n" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["o" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["p" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["r" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["t" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["u" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["v" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["w" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["x" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["y" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["z" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["B" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["C" /* MatSortModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatStepperModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["E" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["F" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["G" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_material__["H" /* MatTooltipModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_15__services_registered_cars_service__["a" /* RegisteredCarsService */]],
-            entryComponents: [],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["b" /* SellComponent */], __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["a" /* DialogColorChoser */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -174,7 +179,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src-user/app/components/dashboard-home/dashboard-home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-tab-group class=\"home-tabs\" mat-stretch-tabs>\n  <mat-tab label=\"Registered Cars\">\n    <app-registered-cars></app-registered-cars>\n  </mat-tab>\n  <mat-tab label=\"Unregistered Cars\">\n    <app-unregistered-cars></app-unregistered-cars>\n  </mat-tab>\n</mat-tab-group>"
+module.exports = "<mat-tab-group class=\"home-tabs\" mat-stretch-tabs>\n  <mat-tab label=\"Home\">\n  </mat-tab>\n  <mat-tab label=\"Registered Cars\">\n    <app-registered-cars></app-registered-cars>\n  </mat-tab>\n  <mat-tab label=\"Unregistered Cars\">\n    <app-unregistered-cars></app-unregistered-cars>\n  </mat-tab>\n</mat-tab-group>"
 
 /***/ }),
 
@@ -224,14 +229,14 @@ var DashboardHomeComponent = /** @class */ (function () {
 /***/ "./src-user/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container fxLayout=\"column\" class=\"dashboard-container\">\n\t<mat-sidenav class=\"mat-elevation-z2\" #sidenav [opened]=\"opened\" [mode]=\"mode\">\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"../../../assets/logo.png\" alt=\"\">\n\t\t</div>\n\t\t<mat-nav-list>\n\t\t\t<a mat-list-item routerLink=\"{{nav.url}}\" *ngFor=\"let nav of navs\">\n\t\t\t\t<mat-icon mat-list-icon>{{nav.icon}}</mat-icon>\n\t\t\t\t<p mat-line>{{nav.name}}</p>\n\t\t\t\t<mat-icon color=\"warn\">error</mat-icon>\n\t\t\t</a>\n\t\t</mat-nav-list>\n\t</mat-sidenav>\n\t<mat-sidenav-content class=\"dashboard-content\">\n\t\t<mat-toolbar class=\"mat-elevation-z1\" color=\"primary\">\n\t\t\t<mat-icon fxShow [fxShow.gt-sm]=\"false\" (click) = \"opened = !opened\">dehaze</mat-icon>\n\t\t\t<span class=\"flex-spacer\"></span>\n\t\t\t<mat-icon>exit_to_app</mat-icon>\n\t\t</mat-toolbar>\n\t\t<router-outlet></router-outlet>\n\t</mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container fxLayout=\"column\" class=\"dashboard-container\">\n\t<mat-sidenav class=\"mat-elevation-z2\" #sidenav [opened]=\"opened\" [mode]=\"mode\">\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"../../../assets/logo.png\" alt=\"\">\n\t\t</div>\n\t\t<mat-nav-list>\n\t\t\t<a mat-list-item routerLink=\"{{nav.url}}\" *ngFor=\"let nav of navs\">\n\t\t\t\t<mat-icon mat-list-icon>{{nav.icon}}</mat-icon>\n\t\t\t\t<p mat-line>{{nav.name}}</p>\n\t\t\t\t<mat-icon color=\"warn\">error</mat-icon>\n\t\t\t</a>\n\t\t</mat-nav-list>\n\t</mat-sidenav>\n\t<mat-sidenav-content class=\"dashboard-content\">\n\t\t<mat-toolbar class=\"mat-elevation-z1\" color=\"primary\">\n\t\t\t<mat-icon fxShow [fxShow.gt-sm]=\"false\" (click) = \"opened = !opened\">dehaze</mat-icon>\n\t\t\t<span class=\"flex-spacer\"></span>\n\t\t\t<mat-icon>exit_to_app</mat-icon>\n\t\t</mat-toolbar>\n\t\t<router-outlet></router-outlet>\n\t\t<button routerLink=\"sell\" class=\"sell-button\" mat-fab color=\"primary\">SELL</button>\n\t</mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
 /***/ "./src-user/app/components/dashboard/dashboard.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n"
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n.sell-button {\n  position: fixed;\n  right: 20px;\n  bottom: 15px;\n  z-index: 1; }\n"
 
 /***/ }),
 
@@ -457,6 +462,123 @@ var RegisteredCarsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src-user/app/components/sell/color-choser.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>Body Color</h1>\n<div md-dialog-content>\n    <table style=\"min-height: 320px;\">\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'WHITE'\">\n                    <div class=\"WHITE color\"></div>\n                    <div>WHITE</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'SILVER'\">\n                    <div class=\"SILVER color\"></div>\n                    <div>SILVER</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BLACK'\">\n                    <div class=\"BLACK color\"></div>\n                    <div>BLACK</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'GREY'\">\n                    <div class=\"GREY color\"></div>\n                    <div>GREY</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BLUE'\">\n                    <div class=\"BLUE color\"></div>\n                    <div>BLUE</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'GREEN'\">\n                    <div class=\"GREEN color\"></div>\n                    <div>GREEN</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'RED'\">\n                    <div class=\"RED color\"></div>\n                    <div>RED</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'GOLD'\">\n                    <div class=\"GOLD color\"></div>\n                    <div>GOLD</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'MAROON'\">\n                    <div class=\"MAROON color\"></div>\n                    <div>MAROON</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BEIGE'\">\n                    <div class=\"BEIGE color\"></div>\n                    <div>BEIGE</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'PINK'\">\n                    <div class=\"PINK color\"></div>\n                    <div>PINK</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BROWN'\">\n                    <div class=\"BROWN color\"></div>\n                    <div>BROWN</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BURGUNDY'\">\n                    <div class=\"BURGUNDY color\"></div>\n                    <div>BURGUNDY</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'YELLOW'\">\n                    <div class=\"YELLOW color\"></div>\n                    <div>YELLOW</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'BRONZE'\">\n                    <div class=\"BRONZE color\"></div>\n                    <div>BRONZE</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'PURPLE'\">\n                    <div class=\"PURPLE color\"></div>\n                    <div>PURPLE</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'TURQOUISE'\">\n                    <div class=\"TURQOUISE color\"></div>\n                    <div>TURQOUISE</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'ORANGE'\">\n                    <div class=\"ORANGE color\"></div>\n                    <div>ORANGE</div>\n                </button>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'INDIGO'\">\n                    <div class=\"INDIGO color\"></div>\n                    <div>INDIGO</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'MAGNETA'\">\n                    <div class=\"MAGNETA color\"></div>\n                    <div>MAGNETA</div>\n                </button>\n            </td>\n            <td style=\"width:33%;\">\n                <button class=\"box\" mat-button [mat-dialog-close]=\"'UNLISTED'\">\n                    <div class=\"UNLISTED color\"></div>\n                    <div>UNLISTED</div>\n                </button>\n            </td>\n        </tr>\n    </table>\n</div>"
+
+/***/ }),
+
+/***/ "./src-user/app/components/sell/color-choser.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".dialog-container {\n  font-size: 10px; }\n\ntable tr {\n  width: 100%;\n  text-align: center; }\n\ntable tr td {\n    width: 33%; }\n\n.box {\n  line-height: 16px;\n  font-size: 10px;\n  min-width: 0px !important; }\n\n.color {\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  display: inline-block;\n  border: 1px solid #555;\n  line-height: 15px !important; }\n\n.WHITE {\n  background-color: white; }\n\n.SILVER {\n  background-color: silver; }\n\n.BLACK {\n  background-color: black; }\n\n.GREY {\n  background-color: #888888; }\n\n.BLUE {\n  background-color: #000053; }\n\n.GREEN {\n  background-color: #0b780b; }\n\n.RED {\n  background-color: #cd1615; }\n\n.GOLD {\n  background-color: #e9c766; }\n\n.MAROON {\n  background-color: #890000; }\n\n.BEIGE {\n  background-color: beige; }\n\n.PINK {\n  background-color: #da55ad; }\n\n.BROWN {\n  background-color: #966938; }\n\n.BURGUNDY {\n  background-color: #6c1c1f; }\n\n.YELLOW {\n  background-color: #ffcd1f; }\n\n.BRONZE {\n  background-color: #965a13; }\n\n.PURPLE {\n  background-color: #57105c; }\n\n.TURQOUISE {\n  background-color: #22eee3; }\n\n.ORANGE {\n  background-color: #fe4f09; }\n\n.INDIGO {\n  background-color: #3a125e; }\n\n.MAGNETA {\n  background-color: #65183a; }\n\n.UNLISTED {\n  background: repeating-linear-gradient(45deg, transparent, transparent 2px, #ccc 2px, #ccc 4px); }\n"
+
+/***/ }),
+
+/***/ "./src-user/app/components/sell/sell.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"mat-elevation-z2 sell-container\">\n  <div fxLayout=\"column\">\n    <div fxFlex=\"100\">\n      <div class=\"upload-image\">\n        <i class=\"material-icons\"  style=\"font-size:100px;\">add_a_photo</i>\n        <p>Upload Photos</p>\n      </div>\n    </div>\n    <mat-form-field fxFlex=\"100\">\n      <mat-icon matSuffix>location_city</mat-icon>\n      <input type=\"text\" placeholder=\"City\" matInput [matAutocomplete]=\"citiesAuto\" #state=\"ngModel\" [(ngModel)]=\"city\" (ngModelChange)=\"filteredCities = filter(city, cities)\">\n      <mat-autocomplete #citiesAuto=\"matAutocomplete\">\n        <mat-option *ngFor=\"let city of filteredCities\" [value]=\"city\" (onSelectionChange)=\"showArea(city)\">\n          {{ city }}\n        </mat-option>\n      </mat-autocomplete>\n    </mat-form-field>\n    <mat-form-field *ngIf=\"citySelected\" fxFlex=\"100\">\n      <mat-icon matSuffix>place</mat-icon>\n      <input type=\"text\" placeholder=\"Area\" matInput [matAutocomplete]=\"areasAuto\" #state=\"ngModel\" [(ngModel)]=\"area\" (ngModelChange)=\"filteredAreas = filter(area, areas[city])\">\n      <mat-autocomplete #areasAuto=\"matAutocomplete\">\n        <mat-option *ngFor=\"let area of filteredAreas\" [value]=\"area\">\n          {{ area }}\n        </mat-option>\n      </mat-autocomplete>\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>directions_car</mat-icon>\n      <mat-select placeholder=\"Model No\">\n        <mat-option *ngFor=\"let modelNo of modelNos\" [value]=\"modelNo\">\n          {{ modelNo }}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n    <mat-form-field fxFlex=\"100\">\n      <mat-icon matSuffix>content_paste</mat-icon>\n      <input type=\"text\" placeholder=\"Registration City\" matInput [matAutocomplete]=\"regCitiesAuto\" #state=\"ngModel\" [(ngModel)]=\"regCity\"\n        (ngModelChange)=\"regFilteredCities = filter(regCity, cities)\">\n      <mat-autocomplete #regCitiesAuto=\"matAutocomplete\">\n        <mat-option *ngFor=\"let regCity of regFilteredCities\" [value]=\"regCity\">\n          {{ regCity }}\n        </mat-option>\n      </mat-autocomplete>\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>av_timer</mat-icon>\n      <input type=\"number\" matInput placeholder=\"Mileage(km)\">\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>color_lens</mat-icon>\n      <input type=\"text\" (click)=\"openDialog()\" [(ngModel)]=\"color\" matInput placeholder=\"Color\">\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>monetization_on</mat-icon>\n      <input type=\"number\" [(ngModel)]=\"color\" matInput placeholder=\"Price(PKR)\">\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>description</mat-icon>\n      <textarea matInput placeholder=\"Description\"></textarea>\n    </mat-form-field>\n\n    <div class=\"divider\">\n      <span>\n        Additional Information\n      </span>\n    </div>\n\n    <mat-form-field>\n      <mat-icon matSuffix>local_gas_station</mat-icon>\n      <mat-select placeholder=\"Engine Type\">\n        <mat-option [value]=\"'Petrol'\">Petrol</mat-option>\n        <mat-option [value]=\"'Diesel'\">Diesel</mat-option>\n        <mat-option [value]=\"'Hybrid'\">Hybrid</mat-option>\n        <mat-option [value]=\"'CNG'\">CNG</mat-option>\n        <mat-option [value]=\"'LPG'\">LPG</mat-option>\n      </mat-select>\n    </mat-form-field>\n    <mat-form-field>\n      <mat-icon matSuffix>flash_on</mat-icon>\n      <input type=\"number\" matInput placeholder=\"Engine Capacity\">\n    </mat-form-field>\n    <div class=\"radio-tag\" fxLayout=\"row\" style=\"margin-bottom: 5px;\">\n      <span>Transmission</span>\n      <span class=\"flex-spacer\"></span>\n      <mat-icon>swap_calls</mat-icon>\n    </div>\n    <mat-radio-group fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n      <mat-radio-button color=\"primary\" fxFlex=\"50\" value=\"Automatic\">Automatic</mat-radio-button>\n      <mat-radio-button color=\"primary\" fxFlex=\"50\" value=\"Manual\">Manual</mat-radio-button>\n    </mat-radio-group>\n    <div class=\"radio-tag\" fxLayout=\"row\" style=\"margin-bottom: 5px;margin-top: 20px;\">\n      <span>Assembly</span>\n      <span class=\"flex-spacer\"></span>\n      <mat-icon>build</mat-icon>\n    </div>\n    <mat-radio-group style=\"margin-bottom: 15px;\" fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n      <mat-radio-button color=\"primary\" fxFlex=\"50\" value=\"Local\">Local</mat-radio-button>\n      <mat-radio-button color=\"primary\" fxFlex=\"50\" value=\"Imported\">Imported</mat-radio-button>\n    </mat-radio-group>\n    <mat-form-field>\n      <mat-select placeholder=\"Features\" multiple>\n        <mat-option [value]=\"'ABS'\">ABS</mat-option>\n        <mat-option [value]=\"'Air Bags'\">Air Bags</mat-option>\n        <mat-option [value]=\"'Air Conditioning'\">Air Conditioning</mat-option>\n        <mat-option [value]=\"'Alloy Rims'\">Alloy Rims</mat-option>\n        <mat-option [value]=\"'Cassette Player'\">Cassette Player</mat-option>\n        <mat-option [value]=\"'Cd Player'\">Cd Player</mat-option>\n        <mat-option [value]=\"'Cool Box'\">Cool Box</mat-option>\n        <mat-option [value]=\"'Cruise Control'\">Cruise Control</mat-option>\n        <mat-option [value]=\"'Dvd Player'\">Dvd Player</mat-option>\n        <mat-option [value]=\"'FM/AM Radio'\">FM/AM Radio</mat-option>\n        <mat-option [value]=\"'Immobilizer Key'\">Immobilizer Key</mat-option>\n        <mat-option [value]=\"'Keyless Entry'\">Keyless Entry</mat-option>\n        <mat-option [value]=\"'Navigation System'\">Navigation System</mat-option>\n        <mat-option [value]=\"'Power Locks'\">Power Locks</mat-option>\n        <mat-option [value]=\"'Power Mirrors'\">Power Mirrors</mat-option>\n        <mat-option [value]=\"'Power Steering'\">Power Steering</mat-option>\n        <mat-option [value]=\"'Power Windows'\">Power Windows</mat-option>\n        <mat-option [value]=\"'Sun Roof'\">Sun Roof</mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src-user/app/components/sell/sell.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.sell-container {\n  margin: 10px;\n  padding: 20px;\n  background-color: white;\n  margin-bottom: 200px;\n  padding-bottom: 30px; }\n.divider {\n  width: 100%;\n  height: 10px;\n  border-bottom: 1px solid #673ab7;\n  text-align: center;\n  margin: 20px 0px; }\n.divider span {\n    font-weight: 600;\n    background-color: white;\n    color: #673ab7;\n    padding: 0 10px; }\n.upload-image {\n  text-align: center; }\n"
+
+/***/ }),
+
+/***/ "./src-user/app/components/sell/sell.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SellComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogColorChoser; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SellComponent = /** @class */ (function () {
+    function SellComponent(dialog) {
+        this.dialog = dialog;
+        this.cities = ['Islamabad', 'Karachi', 'Lahore', 'Rawalpindi'];
+        this.filteredCities = this.cities;
+        this.regFilteredCities = this.cities;
+        this.areas = { "Karachi": ["Korangi", "Defence", "FB Area", "Nazimabad"],
+            "Islamabad": ["F7", "F6", "F8", "F9", "F10", "F11", "G7", "G6", "G8", "G9", "G10", "G11", "I7", "I6", "I8", "I9", "I10", "I11"] };
+        this.filteredAreas = [];
+        this.citySelected = false;
+        this.color = "";
+        this.modelNos = [];
+    }
+    SellComponent.prototype.ngOnInit = function () {
+        this.generateYears();
+    };
+    SellComponent.prototype.filter = function (val, array) {
+        return array.filter(function (option) {
+            return option.toLowerCase().indexOf(val.toLowerCase()) === 0;
+        });
+    };
+    SellComponent.prototype.showArea = function (city) {
+        this.filteredAreas = this.areas[city];
+        this.citySelected = true;
+    };
+    SellComponent.prototype.generateYears = function () {
+        var maxYear = (new Date()).getFullYear();
+        var minYear = maxYear - 50;
+        for (maxYear; maxYear > minYear; maxYear--) {
+            this.modelNos.push(maxYear);
+        }
+    };
+    SellComponent.prototype.openDialog = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(DialogColorChoser, {});
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The dialog was closed ', result);
+            _this.color = result;
+        });
+    };
+    SellComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-sell',
+            template: __webpack_require__("./src-user/app/components/sell/sell.component.html"),
+            styles: [__webpack_require__("./src-user/app/components/sell/sell.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialog */]])
+    ], SellComponent);
+    return SellComponent;
+}());
+
+var DialogColorChoser = /** @class */ (function () {
+    function DialogColorChoser(dialogRef) {
+        this.dialogRef = dialogRef;
+    }
+    DialogColorChoser = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'color-choser',
+            template: __webpack_require__("./src-user/app/components/sell/color-choser.html"),
+            styles: [__webpack_require__("./src-user/app/components/sell/color-choser.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MatDialogRef */]])
+    ], DialogColorChoser);
+    return DialogColorChoser;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src-user/app/components/sign-up/sign-up.component.css":
 /***/ (function(module, exports) {
 
@@ -565,6 +687,7 @@ var UnregisteredCarsComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_dashboard_home_dashboard_home_component__ = __webpack_require__("./src-user/app/components/dashboard-home/dashboard-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_sell_sell_component__ = __webpack_require__("./src-user/app/components/sell/sell.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -574,9 +697,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__components_dashboard_home_dashboard_home_component__["a" /* DashboardHomeComponent */] }
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__components_dashboard_home_dashboard_home_component__["a" /* DashboardHomeComponent */] },
+    { path: 'sell', component: __WEBPACK_IMPORTED_MODULE_3__components_sell_sell_component__["b" /* SellComponent */] }
 ];
 var RoutingModule = /** @class */ (function () {
     function RoutingModule() {
