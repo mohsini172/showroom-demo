@@ -84,12 +84,18 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_unregistered_cars_unregistered_cars_component__ = __webpack_require__("./src-user/app/components/unregistered-cars/unregistered-cars.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_registered_cars_service__ = __webpack_require__("./src-user/app/services/registered-cars.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__ = __webpack_require__("./src-user/app/components/sell/sell.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_unregistered_cars_service__ = __webpack_require__("./src-user/app/services/unregistered-cars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_my_cars_service__ = __webpack_require__("./src-user/app/services/my-cars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_my_cars_my_cars_component__ = __webpack_require__("./src-user/app/components/my-cars/my-cars.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -122,7 +128,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_13__components_registered_cars_registered_cars_component__["a" /* RegisteredCarsComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__components_unregistered_cars_unregistered_cars_component__["a" /* UnregisteredCarsComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["b" /* SellComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["a" /* DialogColorChoser */]
+                __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["a" /* DialogColorChoser */],
+                __WEBPACK_IMPORTED_MODULE_19__components_my_cars_my_cars_component__["a" /* MyCarsComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -164,7 +171,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["G" /* MatToolbarModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_material__["H" /* MatTooltipModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_15__services_registered_cars_service__["a" /* RegisteredCarsService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_15__services_registered_cars_service__["a" /* RegisteredCarsService */], __WEBPACK_IMPORTED_MODULE_17__services_unregistered_cars_service__["a" /* UnregisteredCarsService */], __WEBPACK_IMPORTED_MODULE_18__services_my_cars_service__["a" /* MyCarsService */]],
             entryComponents: [__WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["b" /* SellComponent */], __WEBPACK_IMPORTED_MODULE_16__components_sell_sell_component__["a" /* DialogColorChoser */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
@@ -179,7 +186,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src-user/app/components/dashboard-home/dashboard-home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-tab-group class=\"home-tabs\" mat-stretch-tabs>\n  <mat-tab label=\"Home\">\n  </mat-tab>\n  <mat-tab label=\"Registered Cars\">\n    <app-registered-cars></app-registered-cars>\n  </mat-tab>\n  <mat-tab label=\"Unregistered Cars\">\n    <app-unregistered-cars></app-unregistered-cars>\n  </mat-tab>\n</mat-tab-group>"
+module.exports = "<mat-tab-group class=\"home-tabs\" mat-stretch-tabs>\n  <mat-tab label=\"Home\">\n    <ng-template mat-tab-label>\n      <mat-icon>home</mat-icon>\n    </ng-template>\n    <app-my-cars></app-my-cars>\n  </mat-tab>\n  <mat-tab label=\"Registered Cars\">\n    <ng-template mat-tab-label>\n      <mat-icon>directions_car</mat-icon>\n    </ng-template>\n    <app-registered-cars></app-registered-cars>\n  </mat-tab>\n  <mat-tab label=\"Unregistered Cars\">\n    <ng-template mat-tab-label>\n      <mat-icon>directions_car</mat-icon>\n    </ng-template>\n    <app-unregistered-cars></app-unregistered-cars>\n  </mat-tab>\n</mat-tab-group>"
 
 /***/ }),
 
@@ -229,14 +236,14 @@ var DashboardHomeComponent = /** @class */ (function () {
 /***/ "./src-user/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container fxLayout=\"column\" class=\"dashboard-container\">\n\t<mat-sidenav class=\"mat-elevation-z2\" #sidenav [opened]=\"opened\" [mode]=\"mode\">\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"../../../assets/logo.png\" alt=\"\">\n\t\t</div>\n\t\t<mat-nav-list>\n\t\t\t<a mat-list-item routerLink=\"{{nav.url}}\" *ngFor=\"let nav of navs\">\n\t\t\t\t<mat-icon mat-list-icon>{{nav.icon}}</mat-icon>\n\t\t\t\t<p mat-line>{{nav.name}}</p>\n\t\t\t\t<mat-icon color=\"warn\">error</mat-icon>\n\t\t\t</a>\n\t\t</mat-nav-list>\n\t</mat-sidenav>\n\t<mat-sidenav-content class=\"dashboard-content\">\n\t\t<mat-toolbar class=\"mat-elevation-z1\" color=\"primary\">\n\t\t\t<mat-icon fxShow [fxShow.gt-sm]=\"false\" (click) = \"opened = !opened\">dehaze</mat-icon>\n\t\t\t<span class=\"flex-spacer\"></span>\n\t\t\t<mat-icon>exit_to_app</mat-icon>\n\t\t</mat-toolbar>\n\t\t<router-outlet></router-outlet>\n\t\t<button routerLink=\"sell\" class=\"sell-button\" mat-fab color=\"primary\">SELL</button>\n\t</mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container fxLayout=\"column\" class=\"dashboard-container\">\n\t<mat-sidenav class=\"mat-elevation-z2\" #sidenav [opened]=\"opened\" [mode]=\"mode\">\n\t\t<div class=\"logo\">\n\t\t\t<img src=\"../../../assets/logo.png\" alt=\"\">\n\t\t</div>\n\t\t<mat-nav-list class=\"min-width\" >\n\t\t\t<a mat-list-item routerLink=\"{{nav.url}}\" *ngFor=\"let nav of navs\">\n\t\t\t\t<mat-icon mat-list-icon>{{nav.icon}}</mat-icon>\n\t\t\t\t<p mat-line>{{nav.name}}</p>\n\t\t\t</a>\n\t\t</mat-nav-list>\n\t</mat-sidenav>\n\t<mat-sidenav-content class=\"dashboard-content\">\n\t\t<mat-toolbar class=\"mat-elevation-z1\" color=\"primary\">\n\t\t\t<mat-icon fxShow [fxShow.gt-sm]=\"false\" (click) = \"opened = !opened\">dehaze</mat-icon>\n\t\t\t<span class=\"flex-spacer\"></span>\n\t\t\t<mat-icon>exit_to_app</mat-icon>\n\t\t</mat-toolbar>\n\t\t<router-outlet></router-outlet>\n\t\t<button routerLink=\"sell\" class=\"sell-button\" mat-fab color=\"primary\">\n\t\t\t<mat-icon>add</mat-icon>\n\t\t</button>\n\t</mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
 /***/ "./src-user/app/components/dashboard/dashboard.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n.sell-button {\n  position: fixed;\n  right: 20px;\n  bottom: 15px;\n  z-index: 1; }\n"
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n.dashboard-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n.logo {\n  padding: 10px;\n  background-color: #673ab7;\n  text-align: center; }\n.logo img {\n  width: 100px;\n  display: inline-block; }\n.mat-sidenav-content {\n  background-color: #f0f0f0; }\n.sell-button {\n  position: fixed;\n  right: 20px;\n  bottom: 15px;\n  z-index: 1; }\n.min-width {\n  min-width: 250px; }\n"
 
 /***/ }),
 
@@ -357,6 +364,61 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src-user/app/components/my-cars/my-cars.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <div fxLayout=\"column\" fxLayoutGap=\"20px\" *ngFor=\"let car of cars\">\n    <div fxFlex=\"100\" class=\"mat-elevation-z1 card\">\n      <div fxLayout=\"row\">\n        <div class=\"thumbnail\" fxFlex=\"120px\">\n        </div>\n        <div fxFlex=\"100\" class=\"content\" fxLayout=\"column\">\n          <div fxFlex=\"100\" fxLayout=\"row\">\n            <div class=\"title\">{{car.name}}</div>\n            <div class=\"flex-spacer\"></div>\n            <mat-icon>favorite_border</mat-icon>\n          </div>\n          <div class=\"vertical-spacer\"></div>\n\n          <div class=\"location\">{{car.location}}</div>\n\n          <div class=\"props\" fxFlex=\"100\" fxLayout=\"row\">\n            <span class=\"margin-right\">{{car.year}}</span> |\n            <span class=\"margin-right margin-left\">{{car.mileage}}</span> |\n            <span class=\"margin-right margin-left\">{{car.fuel}}</span>\n          </div>\n          <div class=\"vertical-spacer\"></div>\n\n          <div fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n            <span class=\"flex-spacer\"></span>\n            <div class=\"price-units\">PKR</div>\n            <div class=\"price\">{{car.price}}</div>\n            <div class=\"price-units\">lacs</div>\n          </div>\n          <div style=\"height:5px;\"></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src-user/app/components/my-cars/my-cars.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ".card {\n  background-color: white;\n  margin: 3px 0px; }\n\n.thumbnail {\n  background: url('car.6f774eb641fffe18897e.jpg');\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: auto 100%; }\n\n.content {\n  padding: 10px 10px 10px 20px; }\n\n.content .title {\n    font-weight: 600;\n    font-size: 16px; }\n\n.content .location, .content .props {\n    font-size: 12px;\n    color: gray; }\n\n.content .price {\n    font-weight: 600;\n    font-size: 16px;\n    color: #4caf50; }\n\n.content .price-units {\n    margin: 0px 10px;\n    font-size: 12px;\n    color: #4caf50; }\n\n.margin-left {\n  margin-left: 10px; }\n\n.margin-right {\n  margin-right: 10px; }\n\n.vertical-spacer {\n  margin: 5px 0px; }\n"
+
+/***/ }),
+
+/***/ "./src-user/app/components/my-cars/my-cars.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyCarsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_my_cars_service__ = __webpack_require__("./src-user/app/services/my-cars.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MyCarsComponent = /** @class */ (function () {
+    function MyCarsComponent(mCarsService) {
+        this.mCarsService = mCarsService;
+        this.cars = [];
+    }
+    MyCarsComponent.prototype.ngOnInit = function () {
+        this.cars = this.mCarsService.list();
+    };
+    MyCarsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-my-cars',
+            template: __webpack_require__("./src-user/app/components/my-cars/my-cars.component.html"),
+            styles: [__webpack_require__("./src-user/app/components/my-cars/my-cars.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_my_cars_service__["a" /* MyCarsService */]])
+    ], MyCarsComponent);
+    return MyCarsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src-user/app/components/new-cars/new-cars.component.html":
 /***/ (function(module, exports) {
 
@@ -445,7 +507,7 @@ var RegisteredCarsComponent = /** @class */ (function () {
         this.cars = [];
     }
     RegisteredCarsComponent.prototype.ngOnInit = function () {
-        this.cars = this.rCarsService.getRegistered();
+        this.cars = this.rCarsService.list();
     };
     RegisteredCarsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -632,14 +694,14 @@ var SignUpComponent = /** @class */ (function () {
 /***/ "./src-user/app/components/unregistered-cars/unregistered-cars.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  unregistered-cars-cars works!\n</p>\n"
+module.exports = "<div>\n  <div fxLayout=\"column\" fxLayoutGap=\"20px\" *ngFor=\"let car of cars\">\n    <div fxFlex=\"100\" class=\"mat-elevation-z1 card\">\n      <div fxLayout=\"row\">\n        <div class=\"thumbnail\" fxFlex=\"120px\">\n        </div>\n        <div fxFlex=\"100\" class=\"content\" fxLayout=\"column\">\n          <div fxFlex=\"100\" fxLayout=\"row\">\n            <div class=\"title\">{{car.name}}</div>\n            <div class=\"flex-spacer\"></div>\n            <mat-icon>favorite_border</mat-icon>\n          </div>\n          <div class=\"vertical-spacer\"></div>\n\n          <div class=\"location\">{{car.location}}</div>\n\n          <div class=\"props\" fxFlex=\"100\" fxLayout=\"row\">\n            <span class=\"margin-right\">{{car.year}}</span> |\n            <span class=\"margin-right margin-left\">{{car.mileage}}</span> |\n            <span class=\"margin-right margin-left\">{{car.fuel}}</span>\n          </div>\n          <div class=\"vertical-spacer\"></div>\n\n          <div fxFlex=\"100\" fxLayout=\"row\" fxLayoutAlign=\"center center\">\n            <span class=\"flex-spacer\"></span>\n            <div class=\"price-units\">PKR</div>\n            <div class=\"price\">{{car.price}}</div>\n            <div class=\"price-units\">lacs</div>\n          </div>\n          <div style=\"height:5px;\"></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
 /***/ "./src-user/app/components/unregistered-cars/unregistered-cars.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".card {\n  background-color: white;\n  margin: 3px 0px; }\n\n.thumbnail {\n  background: url('car.6f774eb641fffe18897e.jpg');\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: auto 100%; }\n\n.content {\n  padding: 10px 10px 10px 20px; }\n\n.content .title {\n    font-weight: 600;\n    font-size: 16px; }\n\n.content .location, .content .props {\n    font-size: 12px;\n    color: gray; }\n\n.content .price {\n    font-weight: 600;\n    font-size: 16px;\n    color: #4caf50; }\n\n.content .price-units {\n    margin: 0px 10px;\n    font-size: 12px;\n    color: #4caf50; }\n\n.margin-left {\n  margin-left: 10px; }\n\n.margin-right {\n  margin-right: 10px; }\n\n.vertical-spacer {\n  margin: 5px 0px; }\n"
 
 /***/ }),
 
@@ -649,6 +711,7 @@ module.exports = ""
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnregisteredCarsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_unregistered_cars_service__ = __webpack_require__("./src-user/app/services/unregistered-cars.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -659,10 +722,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var UnregisteredCarsComponent = /** @class */ (function () {
-    function UnregisteredCarsComponent() {
+    function UnregisteredCarsComponent(uCarsService) {
+        this.uCarsService = uCarsService;
+        this.cars = [];
     }
     UnregisteredCarsComponent.prototype.ngOnInit = function () {
+        this.cars = this.uCarsService.list();
     };
     UnregisteredCarsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -670,7 +737,7 @@ var UnregisteredCarsComponent = /** @class */ (function () {
             template: __webpack_require__("./src-user/app/components/unregistered-cars/unregistered-cars.component.html"),
             styles: [__webpack_require__("./src-user/app/components/unregistered-cars/unregistered-cars.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_unregistered_cars_service__["a" /* UnregisteredCarsService */]])
     ], UnregisteredCarsComponent);
     return UnregisteredCarsComponent;
 }());
@@ -721,6 +788,96 @@ var RoutingModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src-user/app/services/my-cars.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyCarsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MyCarsService = /** @class */ (function () {
+    function MyCarsService() {
+    }
+    MyCarsService.prototype.list = function () {
+        return [
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            }
+        ];
+    };
+    MyCarsService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], MyCarsService);
+    return MyCarsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src-user/app/services/registered-cars.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -740,7 +897,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var RegisteredCarsService = /** @class */ (function () {
     function RegisteredCarsService() {
     }
-    RegisteredCarsService.prototype.getRegistered = function () {
+    RegisteredCarsService.prototype.list = function () {
         return [
             {
                 name: "Suzuki Alto ECO L",
@@ -805,6 +962,96 @@ var RegisteredCarsService = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], RegisteredCarsService);
     return RegisteredCarsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src-user/app/services/unregistered-cars.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnregisteredCarsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UnregisteredCarsService = /** @class */ (function () {
+    function UnregisteredCarsService() {
+    }
+    UnregisteredCarsService.prototype.list = function () {
+        return [
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            },
+            {
+                name: "Suzuki Alto ECO L",
+                mileage: 12000,
+                location: "Islamabad",
+                year: 2015,
+                fuel: "Petrol",
+                price: 1.67
+            }
+        ];
+    };
+    UnregisteredCarsService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], UnregisteredCarsService);
+    return UnregisteredCarsService;
 }());
 
 
